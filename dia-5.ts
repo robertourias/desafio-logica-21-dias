@@ -15,28 +15,27 @@ let segundos_restantes = 10
 for (let i = segundos_restantes; i >= 0; i--) {
   if (i === 3) {
     console.log("Atenção!", i)
-  } else if (i === 0) {
-    console.log("Lançamento!", i)
   } else {
     console.log(i)
   }
 }
+console.log("Lançamento!")
 
 // Desafio 3: Calculo de juros
 let valor_investido = 1000
 let taxa_juros_anual = 0.05
 let valor_meta = valor_investido * 2
-let anos_investidos = 0
+let anos_investimento = 0
 
 while (valor_investido < valor_meta) {
   valor_investido += valor_investido * taxa_juros_anual
-  anos_investidos++
+  anos_investimento++
 }
 
 console.log(
   `O valor investido será de R$${valor_investido.toFixed(
     2
-  )} em ${anos_investidos} anos`
+  )} em ${anos_investimento} anos`
 )
 
 // Desafio 4: Compra parcelada
@@ -48,6 +47,9 @@ for (let i = 0; i < numero_parcelas; i++) {
   console.log(
     `Parcela ${i + 1}: R$${valor_parcela.toFixed(2)}, resta pagar ${
       numero_parcelas - i
-    } parcelas no total de R$${(valor_compra - valor_parcela * i).toFixed(2)}`
+    } parcelas e a divida é no total de R$${(
+      valor_compra -
+      valor_parcela * i
+    ).toFixed(2)}`
   )
 }
