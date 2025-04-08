@@ -69,7 +69,7 @@ let media = (nota_1 + nota_2 + nota_3 + nota_4) / 4
 
 //Divisão 2
 let metros = 10000
-let kilometros = metros / 1000
+let quilometros = metros / 1000
 
 // Desafio 2: Para ou ímpar
 let num = 11
@@ -83,7 +83,7 @@ if (num % 2 === 0) {
 // Desafio 3: Calculo do IMC
 let peso = 91
 let altura = 1.75
-let imc = peso / altura ** 2
+let imc = peso / (altura * altura)
 
 if (imc < 18.5) {
   console.log("Abaixo do peso")
