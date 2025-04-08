@@ -3,11 +3,11 @@ let idade = 37
 let primeiro_carteira = true
 let tempo_vencimento: number
 
-if (idade >= 18 && primeiro_carteira) {
+if (primeiro_carteira) {
   tempo_vencimento = 1
-} else if (!primeiro_carteira && idade >= 18 && idade < 50) {
+} else if (idade >= 18 && idade < 50) {
   tempo_vencimento = 10
-} else if (!primeiro_carteira && idade >= 50 && idade < 70) {
+} else if (idade >= 50 && idade < 70) {
   tempo_vencimento = 5
 } else {
   tempo_vencimento = 3
@@ -48,17 +48,20 @@ let pode_comprar =
 console.log(pode_comprar)
 
 // Desafio 5: Cancela de estacioamento
-let estado_cancela = 1
+let estado_cancela = "Aberta"
 
 switch (estado_cancela) {
-  case 1:
+  case "Aberta":
     console.log("Cancela aberta")
     break
-  case 2:
+  case "Fechada":
     console.log("Cancela fechada")
     break
+  case "Manutencao":
+    console.log("Cancela em manutenção")
+    break
   default:
-    console.log("Em manutenção")
+    console.log("Escolha inválida")
 }
 
 // Desafio 6: Sistem de PDV
@@ -85,7 +88,8 @@ switch (tipoProduto) {
 
 console.log(`O percentual de desconto é de ${percentualDesconto * 100}%`)
 console.log(
-  `O preço do produto com desconto é de ${
-    precoProduto - precoProduto * percentualDesconto
-  }`
+  `O preço do produto com desconto é de R$${(
+    precoProduto -
+    precoProduto * percentualDesconto
+  ).toFixed(2)}`
 )
