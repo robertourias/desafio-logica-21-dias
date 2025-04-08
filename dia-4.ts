@@ -32,11 +32,11 @@ if (nota_aluno < 5) {
 
 // Desafio 3: Transforme o código em uma condição ternária
 let nota = 8
-let status: string
+let status_nota: string
 
-status = nota >= 70 ? "Aprovado" : "Reprovado"
+status_nota = nota >= 70 ? "Aprovado" : "Reprovado"
 
-console.log(status)
+console.log(status_nota)
 
 // Desafio 4: Condição ternária com condição mais complexa
 let saldo = 1000
