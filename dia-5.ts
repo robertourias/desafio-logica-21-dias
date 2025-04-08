@@ -1,7 +1,7 @@
 // Desafio 1: Rendimento de aplicação financeira
 let capital_investido = 1000
 let taxa_juros_ano = 0.12
-let anos_investidos
+let anos_investidos = 5
 
 for (let i = 0; i <= anos_investidos; i++) {
   capital_investido += capital_investido * taxa_juros_ano

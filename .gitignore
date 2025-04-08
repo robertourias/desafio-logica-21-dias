@@ -1,2 +1,5 @@
 *.js
 *.pdf
+
+/node_modules*
+*-lock.json

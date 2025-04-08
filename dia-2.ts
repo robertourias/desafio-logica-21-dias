@@ -46,9 +46,9 @@ let avaliacao_durabilidade: number
 let novo: boolean
 
 // Desafio 4: Calcule seu IMC
-let peso = 91
-let altura = 1.75
-let imc: number
+let meu_peso = 91
+let minha_altura = 1.75
+let meu_imc: number
 
-imc = peso / altura ** 2
-console.log("Meu imc é ", imc)
+meu_imc = meu_peso / minha_altura ** 2
+console.log("Meu imc é ", meu_imc)

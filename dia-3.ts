@@ -32,7 +32,7 @@ let total_compra = compra_a + compra_b + compra_c - estorno_a
 // Subração 2
 let ano_atual = 2025
 let ano_nascimento = 1990
-let idade = ano_atual - ano_nascimento
+let minha_idade = ano_atual - ano_nascimento
 
 // Subração 3
 let total_moedas = 1000
@@ -47,7 +47,7 @@ let troco = total_moedas - total_artefatos
 // Multiplicação 1
 let preco_produto_1 = 10
 let quantidade = 3
-let valor_compra = preco_produto_1 * quantidade
+let valor_total_compra = preco_produto_1 * quantidade
 
 // Multiplicação 2
 let largura = 5
