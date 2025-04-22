@@ -31,7 +31,7 @@ function alertaSaldo() {
   }
 }
 
-function depositar(conta, valor) {
+function depositar(conta: number, valor: number) {
   if (conta === 1) {
     if (saldoConta1 < 0) {
       jurosLimite += valor * 0.15
@@ -47,7 +47,7 @@ function depositar(conta, valor) {
   }
 }
 
-function debitar(conta, valor) {
+function debitar(conta: number, valor: number) {
   if (conta === 1 && valor <= saldoConta1 + limite) {
     saldoConta1 -= valor
   } else if (conta === 2 && valor <= saldoConta2 + limite) {
@@ -57,7 +57,7 @@ function debitar(conta, valor) {
   }
 }
 
-function transferir(valor, contaOrigem, contaDestino) {
+function transferir(valor: number, contaOrigem: number, contaDestino: number) {
   if (contaOrigem === 1 && valor <= saldoConta1) {
     debitar(1, valor)
     depositar(contaDestino, valor)
@@ -69,7 +69,7 @@ function transferir(valor, contaOrigem, contaDestino) {
   }
 }
 
-function converterSaldoParaDolar(conta) {
+function converterSaldoParaDolar(conta: number) {
   if (conta === 1) {
     return saldoConta1 / taxaConversaoDolar
   } else if (conta === 2) {

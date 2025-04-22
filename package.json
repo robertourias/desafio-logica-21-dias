@@ -2,7 +2,7 @@
   "name": "desafio-logica-21-dias",
   "version": "1.0.0",
   "description": "- Instale o Node\r - Instalar typescript com npm de forma global no terminal",
-  "main": "dia-5.js",
+  "main": "dia-1.js",
   "scripts": {
     "dev": "tsc --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
