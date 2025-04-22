@@ -1,38 +1,32 @@
 // Desafio 1: Recrie funções úteis em arrays
 function myIndexOf(array: any[], searchTerm: string) {
-  let indice: number = -1
   for (let i = 0; i < array.length; i++) {
     if (array[i] === searchTerm) {
-      indice = i
-      break
+      return i
     }
   }
 
-  return indice
+  return -1
 }
 
 function myIncludes(array: any[], searchTerm: string) {
-  let estaIncluso: boolean = false
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] === searchTerm) {
-      estaIncluso = true
-      break
+  for (let item of array) {
+    if (item === searchTerm) {
+      return true
     }
   }
 
-  return estaIncluso
+  return false
 }
 
 function myLastIndexOf(array: any[], searchTerm: string) {
-  let indice: number = -1
   for (let i = array.length - 1; i >= 0; i--) {
     if (array[i] === searchTerm) {
-      indice = i
-      break
+      return i
     }
   }
 
-  return indice
+  return -1
 }
 
 let arrayElementos = ["React", "Typescript", "HTML", "CSS"]
@@ -56,7 +50,7 @@ function mySlice(
 ) {
   let novoArray: any[] = []
 
-  for (let i = indiceInicial; i <= qtdElementos; i++) {
+  for (let i = indiceInicial; i <= qtdElementos && i < array.length; i++) {
     novoArray.push(array[i])
   }
 
