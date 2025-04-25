@@ -1,47 +1,20 @@
-// Desafio 1: Braço mecânico para empilhar produtos
+let pilhaDeProdutos = []
+const CAPACIDADE_MAXIMA = 10
 
-let produtos = [
-  "sapato",
-  "bolsa",
-  "perfume",
-  "celular",
-  "microfone",
-  "cadeira",
-  "mesa",
-  "monitor",
-  "relógio",
-  "Boné",
-  "Casaco",
-  "teclado",
-  "Violão",
-  "webcam",
-  "maquina fotografica",
-  "gopro",
-  "drone",
-  "tablet",
-  "cafeteira",
-  "moedor de café",
-  "Kindle",
-  "Ventilador",
-]
-
-let despachados: any[] = []
-
-function esteira() {
-  let caixa: any[] = []
-
-  for (let item of produtos) {
-    if (caixa.length && caixa.length % 10 === 0) {
-      console.log(`Caixa cheia e despachada`)
-      console.log("-----------")
-      despachados.push([...caixa])
-      caixa = []
-    }
-    caixa.push(item)
-    console.log(`Produto "${item}" add a esteira`)
+function empilharProduto(produto: string) {
+  if (pilhaDeProdutos.length < CAPACIDADE_MAXIMA) {
+    pilhaDeProdutos.push(produto)
+    console.log(`Produto ${produto} empilhado.`)
+  } else {
+    console.log("Caixa cheia. Enviando para selagem e despacho.")
+    pilhaDeProdutos = [] // Inicia uma nova pilha
+    pilhaDeProdutos.push(produto)
+    console.log(`Produto ${produto} empilhado na nova caixa.`)
   }
 }
 
-esteira()
-console.log("despachados", despachados)
-console.log("produtos", produtos)
+// Simulando a esteira com 40 produtos
+const TOTAL_PRODUTOS_ESTEIRA = 40
+for (let i = 1; i <= TOTAL_PRODUTOS_ESTEIRA; i++) {
+  empilharProduto(`Produto ${i}`)
+}
