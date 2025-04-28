@@ -1,45 +1,51 @@
-// Desafio 1: Controle de Navegação em navegadores Web
+let pilhaVoltar: string[] = []
+let pilhaAvancar: string[] = []
+let paginaAtual: string
 
-let arrayVoltar: Array<string> = []
-let arrayAvancar: string[] = []
-let paginaAtual: string = ""
+// Função para navegar até uma página.
+function navegarPara(pagina: string) {
+  if (paginaAtual) {
+    pilhaVoltar.push(paginaAtual)
+    pilhaAvancar = []
+  }
 
+  // A nova página se torna a página atual.
+  paginaAtual = pagina
+  console.log("Navegando para:", paginaAtual)
+}
+
+// Função para voltar para a página anterior.
 function voltar() {
-  if (!arrayVoltar.length) {
-    console.log("Não existe página anterior (Desabilitar botão de voltar)")
+  if (!pilhaVoltar.length) {
+    console.log("Não há páginas anteriores.")
     return
   }
-  paginaAtual && arrayAvancar.push(paginaAtual)
-  paginaAtual = arrayVoltar.pop() || ""
+
+  pilhaAvancar.push(paginaAtual)
+
+  paginaAtual = pilhaVoltar.pop() || ""
+  console.log("Voltando para:", paginaAtual)
 }
 
+// Função para avançar para a próxima página.
 function avancar() {
-  if (!arrayAvancar.length) {
-    console.log("Não existe próxima página (Desabilitar botão de avançar)")
+  if (!pilhaAvancar.length) {
+    console.log("Não há páginas à frente.")
     return
   }
 
-  paginaAtual && arrayVoltar.push(paginaAtual)
-  paginaAtual = arrayAvancar.pop() || ""
+  pilhaVoltar.push(paginaAtual)
+
+  paginaAtual = pilhaAvancar.pop() || ""
+  console.log("Avançando para:", paginaAtual)
 }
 
-function navegar(url: string) {
-  paginaAtual && arrayVoltar.push(paginaAtual)
-  paginaAtual = url
-}
-
-// Simulando navegação
-navegar("google")
-navegar("youtube")
-navegar("reddit")
-navegar("netflix")
-navegar("instagram")
-voltar()
-voltar()
-voltar()
-avancar()
-avancar()
-
-console.log("arrayVoltar: ", arrayVoltar)
-console.log("página atual: ", paginaAtual)
-console.log("arrayAvancar: ", arrayAvancar)
+// Testando as funções
+navegarPara("A")
+navegarPara("B")
+navegarPara("C")
+voltar() // Voltando para B
+voltar() // Voltando para A
+avancar() // Avançando para B
+navegarPara("D")
+voltar() // Voltando para B
